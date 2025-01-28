@@ -65,7 +65,9 @@ with open('model_lr.pkl', 'rb') as file:
 
 prediction = lr_model.predict(user_data_dummies)
 
-if prediction[0] == 1:
-    st.write("High Risk")
-else:
-    st.write("Low Risk")
+st.write(prediction)
+if st.button("PREDIRE"):
+    if prediction != 1:
+        st.write("High Risk")
+    else:
+        st.write("Low Risk")
